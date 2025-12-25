@@ -1,5 +1,10 @@
-{
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  define: {
+    "process.env": {},     // fixes: ReferenceError: process is not defined
+    global: "globalThis",  // fixes: ReferenceError: global is not defined
+  },
+});
