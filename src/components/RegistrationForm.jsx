@@ -137,7 +137,7 @@ export default function RegistrationForm() {
             >
               <div className="cardHeader">
                 <img className="logo" src={logo} alt="CAN Financial Solutions" />
-                <div className="h1">Get Started — Registration</div>
+                <div className="h1">Get Started - Registration</div>
                 <p className="sub1">We're excited to help you achieve your financial goals!</p>
               </div>
 
