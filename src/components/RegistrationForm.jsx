@@ -4,7 +4,7 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "../lib/supabaseClient.js";
 import logo from "../assets/logo.png";
 
-const ADMIN_NOTIFY_EMAIL = "chidam.algar@gmail.com";
+const ADMIN_NOTIFY_EMAIL = "chidam.alagar@gmail.com";
 
 const BUSINESS_OPPORTUNITIES = [
   { id: "financial_freedom", label: "Financial and Time Freedom" },
