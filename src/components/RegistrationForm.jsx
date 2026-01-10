@@ -42,7 +42,7 @@ export default function RegistrationForm() {
     email: "",
     profession: "",
     preferred_days: [], // multi-select
-    preferred_time: "", // AM | PM
+    preferred_time: [], // "", // AM | PM
     referred_by: "",
   });
 
@@ -319,20 +319,20 @@ export default function RegistrationForm() {
                       <label>
                         Preferred Meeting Time<span className="req">*</span>
                       </label>
-                      <div className="row">
-                        {["AM", "PM"].map((t) => (
-                          <label className="pill" key={t}>
-                            <input
-                              type="radio"
-                              name="preferred_time"
-                              value={t}
-                              checked={formData.preferred_time === t}
-                              onChange={(e) => setFormData((p) => ({ ...p, preferred_time: e.target.value }))}
-                            />
-                            {t}
-                          </label>
-                        ))}
-                      </div>
+                    <div className="row">
+                      {DAYS.map((d) => (
+                        <label className="pill" key={d}>
+                          <input
+                            type="checkbox"
+                            checked={formData.preferred_time.includes(d)}
+                            onChange={() => toggleArray("preferred_time", d)}
+                          />
+                          {d}
+                        </label>
+                      ))}
+                    </div>
+                      
+                    
                     </div>
 
                     <div className="field">
