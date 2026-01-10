@@ -26,6 +26,7 @@ const WEALTH_SOLUTIONS = [
 ];
 
 const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+const TIME  = ["AM","PM"];
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || "").trim());
@@ -63,7 +64,7 @@ export default function RegistrationForm() {
       formData.phone.trim() &&
       isValidEmail(formData.email) &&
       formData.preferred_days.length > 0 &&
-      formData.preferred_time &&
+      formData.preferred_time.length > 0 &&
       formData.referred_by.trim();
 
     const interestOk =
@@ -320,7 +321,7 @@ export default function RegistrationForm() {
                         Preferred Meeting Time<span className="req">*</span>
                       </label>
                     <div className="row">
-                      {DAYS.map((d) => (
+                      {TIME.map((d) => (
                         <label className="pill" key={d}>
                           <input
                             type="checkbox"
