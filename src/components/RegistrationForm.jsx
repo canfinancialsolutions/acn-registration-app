@@ -96,36 +96,28 @@ export default function RegistrationForm() {
       setSubmitting(true);
 
       const payload = {
-        interest_type: formData.interest_type,
-        business_opportunities: formData.business_opportunities,
-        wealth_solutions: formData.wealth_solutions,
+        ...formData,
+        // normalize
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
         first_name: formData.first_name.trim(),
         last_name: formData.last_name.trim(),
-        phone: formData.phone.trim(),
-        email: formData.email.trim(),
         profession: formData.profession.trim(),
-        preferred_days: formData.preferred_days,
-        preferred_time: formData.preferred_time,
         referred_by: formData.referred_by.trim(),
       };
 
-      // FIXED: Direct database insert instead of Edge Function
-      const { data, error: insertError } = await supabase
-        .from("client_registrations")
-        .insert([payload])
-        .select();
+      // Call Supabase Edge Function (server-side insert + email)
+      const { data, error: fnError } = await supabase.functions.invoke("register", {
+        body: payload,
+      });
 
-      if (insertError) {
-        throw insertError;
-      }
+      if (fnError) throw fnError;
+      if (!data?.ok) throw new Error(data?.error || "Submission failed.");
 
-      // Successfully saved
       setSubmitted(true);
-      setEmailSent(true); // Assume email will be sent via database trigger or separate process
-      
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error("Registration error:", err);
+      console.error(err);
       setError(err?.message || "Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
@@ -145,26 +137,17 @@ export default function RegistrationForm() {
               transition={{ duration: 0.2 }}
             >
               <div className="cardHeader text-center">
-                <img 
-                  src={logo} 
-                  alt="CAN Care & Advancement Network" 
-                  className="h-20 md:h-24 w-auto mx-auto mb-4 object-contain max-w-full" 
-                  style={{ maxHeight: "96px" }}
-                />
-                <div className="h1 text-2xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
+                <img src={logo} alt="CAN Care & Advancement Network" className="h-20 md:h-24 w-auto mx-auto mb-4 object-contain max-w-full" style={{ maxHeight: "96px" }} />
+                <div className="h1 text-2xl md:text-2xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
                 <p className="sub1 text-xl md:text-2xl font-semibold text-green-600 mb-4">
                   <b>Welcome to CAN Care & Advancement Network</b>
                 </p>
                 <p className="sub2 text-base md:text-lg text-slate-700 mb-4">
                   We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
                 </p>
-                <p className="sub2 text-base md:text-lg font-semibold text-slate-800 mb-4">
-                  <b>Are you ready to make a real difference while building your future?</b>
-                </p>
                 <p className="sub2 text-base md:text-lg text-slate-700 mb-6">
-                  At CAN Care & Advancement Network, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
+                  At <b>CAN Care & Advancement Network</b>, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
                 </p>
-
                 {/* Benefits Section */}
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 mx-auto max-w-4xl">
                   <p className="sub2 text-sm md:text-base text-slate-800 text-center">
@@ -172,6 +155,7 @@ export default function RegistrationForm() {
                   </p>
                 </div>
               </div>
+
 
               <form className="cardBody" onSubmit={handleSubmit}>
                 {/* Interest */}
@@ -199,14 +183,14 @@ export default function RegistrationForm() {
                     ))}
                   </div>
 
-                  <div className="help">Choose one. Selecting "Both" shows both sections.</div>
+                  <div className="help">Choose one. Selecting “Both” shows both sections.</div>
                 </div>
 
                 {/* Opportunities + Wealth */}
                 <div className="split">
                   <div className="section">
                     <div className="sectionTitle">
-                      Business Opportunities{showEntrepreneurship ? <span className="req">*</span> : null}
+                      Entrepreneurship - Business Opportunity{showEntrepreneurship ? <span className="req">*</span> : null}
                     </div>
 
                     {showEntrepreneurship ? (
@@ -226,13 +210,13 @@ export default function RegistrationForm() {
                         </div>
                       </div>
                     ) : (
-                      <div className="help">Select "Entrepreneurship" or "Both" above to enable this section.</div>
+                      <div className="help">Select “Entrepreneurship” or “Both” above to enable this section.</div>
                     )}
                   </div>
 
                   <div className="section">
                     <div className="sectionTitle">
-                      Wealth Solutions{showClient ? <span className="req">*</span> : null}
+                      Client - Wealth Building Solutions{showClient ? <span className="req">*</span> : null}
                     </div>
 
                     {showClient ? (
@@ -252,7 +236,7 @@ export default function RegistrationForm() {
                         </div>
                       </div>
                     ) : (
-                      <div className="help">Select "Client" or "Both" above to enable this section.</div>
+                      <div className="help">Select “Client” or “Both” above to enable this section.</div>
                     )}
                   </div>
                 </div>
@@ -384,7 +368,7 @@ export default function RegistrationForm() {
                   </div>
 
                   <div className="actions">
-                    <button className="btn" type="submit" disabled={submitting || !canSubmit}>
+                    <button className="btn" type="submit" disabled={submitting}>
                       {submitting ? (
                         <>
                           <Loader2 size={18} className="spin" />
