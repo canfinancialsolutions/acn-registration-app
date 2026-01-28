@@ -58,7 +58,7 @@ Required:
 - `SUPABASE_URL` (already available)
 
 Optional:
-- `FROM_NAME` (defaults to “CAN Financial Solutions”)
+- `FROM_NAME` (defaults to “CAN Care & Advancement Network”)
 - `ADMIN_NOTIFY_EMAIL` (send a copy to your business email)
 - `LOGO_URL` (public URL for a logo used in email)
 
