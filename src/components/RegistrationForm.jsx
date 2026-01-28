@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "../lib/supabaseClient.js";
-import logo from "../assets/logo.png";
+import logo from "../assets/CAN_TTN.png";
 
 const BUSINESS_OPPORTUNITIES = [
   { id: "financial_freedom", label: "Financial and Time Freedom" },
@@ -137,10 +137,11 @@ export default function RegistrationForm() {
               transition={{ duration: 0.2 }}
             >
               <div className="cardHeader">
-                <img className="logo" src={logo} alt="CAN Financial Solutions" />
+                <img className="logo" src={logo} alt="CAN Thrive Together Network" />
                 <div className="h1">Get Started - Registration</div>
-                <p className="sub1"><b>We're excited to help you achieve your financial goals!</b></p>
-                <p className="sub2">Are you interested in becoming a successful entrepreneur and building your own business?</p>
+                <p className="sub1"><b>Welcome to CAN Thrive Together Network</b></p>
+                <p className="sub2">We’re excited to connect with you and help you take the next step toward a flexible, growth-focused opportunity.</p>
+                 <p className="sub2">Are you interested in building your own business with training, mentorship, and a supportive team?</p>
                 <p className="sub2">✅ Want to be your own boss? ✅ Looking for a flexible career with unlimited growth potential?</p>
                 <p className="sub2"> Join our team and start your journey toward financial independence! </p>
               </div>
@@ -394,7 +395,7 @@ export default function RegistrationForm() {
                 )}
               </p>
               <p className="sub2" style={{ marginTop: 10 }}>
-                We'll reach out to you soon. Thanks for choosing CAN Financial Solutions!
+                We'll reach out to you soon. Thanks for choosing CAN Thrive Together Network!
               </p>
             </motion.div>
           )}
