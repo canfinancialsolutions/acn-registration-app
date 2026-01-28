@@ -154,6 +154,8 @@ export default function RegistrationForm() {
                   <p className="sub2 text-sm md:text-base text-slate-800 text-center">
                     ✅ <b>Be your own boss</b> – Build a business on your terms 
                     ✅ <b>Flexible schedule</b> – Work when and where it works for you 
+                  </p>
+                   <p className="sub2 text-sm md:text-base text-slate-800 text-center">
                     ✅ <b>Unlimited income potential</b> – Your success has no ceiling 
                     ✅ <b>Make an impact</b> – Protect families while building your legacy
                   </p>
