@@ -152,8 +152,7 @@ Deno.serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
-
-  const interestTypeFormatted =
+const interestTypeFormatted =
     interestType === "both" ? "Both" : titleCase(interestType);
 
   // Branded HTML email (simple + clean)
@@ -163,7 +162,7 @@ Deno.serve(async (req) => {
   <body style="font-family:Arial,Helvetica,sans-serif; color:#0f172a; line-height:1.2;">
     <div style="max-width:640px;margin:0 auto;padding:22px;">
       <div style="text-align:center;margin-bottom:18px;">
-        ${LOGO_URL ? `<img src="${LOGO_URL}" alt="CAN Care & Advancement Network" style="max-width:160px;height:auto;margin-bottom:10px;" />` : ""}
+        ${ ? `<img src="${}" alt="CAN Care & Advancement Network" style="max-width:160px;height:auto;margin-bottom:10px;" />` : ""}
         <h2 style="margin:0;">Registration Confirmation</h2>
         <div style="color:#475569;font-size:13px;margin-top:6px;">We're excited to help you achieve your financial goals!</div>
       </div>
