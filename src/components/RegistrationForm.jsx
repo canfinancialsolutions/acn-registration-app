@@ -137,12 +137,7 @@ export default function RegistrationForm() {
               transition={{ duration: 0.2 }}
             >
               <div className="cardHeader text-center">
-                <img 
-                  src={logo} 
-                  alt="CAN Care & Advancement Network" 
-                  className="h-20 md:h-24 w-auto mx-auto mb-4 object-contain max-w-full" 
-                  style={{ maxHeight: '96px' }}
-                />
+                <img src={logo} alt="CAN Care & Advancement Network" className="h-20 md:h-24 w-auto mx-auto mb-4 object-contain max-w-full" style={{ maxHeight: "96px" }} />
                 <div className="h1 text-2xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
                 <p className="sub1 text-xl md:text-2xl font-semibold text-green-600 mb-4">
                   <b>Welcome to CAN Care & Advancement Network</b>
@@ -157,13 +152,14 @@ export default function RegistrationForm() {
                   At CAN Care & Advancement Network, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
                 </p>
 
-                {/* Benefits Section - FIXED: Now properly centered */}
+                {/* Benefits Section */}
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 mx-auto max-w-4xl">
                   <p className="sub2 text-sm md:text-base text-slate-800 text-center">
                     ✅ <b>Be your own boss</b> ✅ <b>Flexible schedule</b> ✅ <b>Unlimited income potential</b> ✅ <b>Make an impact</b>
                   </p>
                 </div>
               </div>
+
 
               <form className="cardBody" onSubmit={handleSubmit}>
                 {/* Interest */}
@@ -191,60 +187,54 @@ export default function RegistrationForm() {
                     ))}
                   </div>
 
-                  <div className="help">Choose one. Selecting "Both" shows both sections.</div>
+                  <div className="help">Choose one. Selecting “Both” shows both sections.</div>
                 </div>
 
                 {/* Opportunities + Wealth */}
                 <div className="split">
                   <div className="section">
                     <div className="sectionTitle">
-                      Business Opportunities{showEntrepreneurship ? <span className="req">*</span> : null}
+                      Entrepreneurship - Business Opportunity{showEntrepreneurship ? <span className="req">*</span> : null}
                     </div>
 
                     {showEntrepreneurship ? (
-                      <div className="w-full">
-                        <div className="flex flex-col gap-3">
-                          {BUSINESS_OPPORTUNITIES.map((o) => (
-                            <label className="flex items-start gap-3 cursor-pointer text-sm md:text-base w-full" key={o.id}>
-                              <input
-                                type="checkbox"
-                                className="mt-0.5 h-5 w-5 flex-shrink-0 accent-green-600"
-                                checked={formData.business_opportunities.includes(o.id)}
-                                onChange={() => toggleArray("business_opportunities", o.id)}
-                              />
-                              <span className="leading-relaxed text-left flex-1">{o.label}</span>
-                            </label>
-                          ))}
-                        </div>
+                      <div className="choices">
+                        {BUSINESS_OPPORTUNITIES.map((o) => (
+                          <label className="pill" key={o.id}>
+                            <input
+                              type="checkbox"
+                              checked={formData.business_opportunities.includes(o.id)}
+                              onChange={() => toggleArray("business_opportunities", o.id)}
+                            />
+                            {o.label}
+                          </label>
+                        ))}
                       </div>
                     ) : (
-                      <div className="help">Select "Entrepreneurship" or "Both" above to enable this section.</div>
+                      <div className="help">Select “Entrepreneurship” or “Both” above to enable this section.</div>
                     )}
                   </div>
 
                   <div className="section">
                     <div className="sectionTitle">
-                      Wealth Solutions{showClient ? <span className="req">*</span> : null}
+                      Client - Wealth Building Solutions{showClient ? <span className="req">*</span> : null}
                     </div>
 
                     {showClient ? (
-                      <div className="w-full">
-                        <div className="flex flex-col gap-3">
-                          {WEALTH_SOLUTIONS.map((o) => (
-                            <label className="flex items-start gap-3 cursor-pointer text-sm md:text-base w-full" key={o.id}>
-                              <input
-                                type="checkbox"
-                                className="mt-0.5 h-5 w-5 flex-shrink-0 accent-green-600"
-                                checked={formData.wealth_solutions.includes(o.id)}
-                                onChange={() => toggleArray("wealth_solutions", o.id)}
-                              />
-                              <span className="leading-relaxed text-left flex-1">{o.label}</span>
-                            </label>
-                          ))}
-                        </div>
+                      <div className="choices">
+                        {WEALTH_SOLUTIONS.map((o) => (
+                          <label className="pill" key={o.id}>
+                            <input
+                              type="checkbox"
+                              checked={formData.wealth_solutions.includes(o.id)}
+                              onChange={() => toggleArray("wealth_solutions", o.id)}
+                            />
+                            {o.label}
+                          </label>
+                        ))}
                       </div>
                     ) : (
-                      <div className="help">Select "Client" or "Both" above to enable this section.</div>
+                      <div className="help">Select “Client” or “Both” above to enable this section.</div>
                     )}
                   </div>
                 </div>
