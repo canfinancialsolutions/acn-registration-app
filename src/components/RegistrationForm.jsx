@@ -157,17 +157,8 @@ export default function RegistrationForm() {
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6">
             <div className="space-y-3">
               <p className="sub2 text-sm md:text-base text-slate-800">
-                ✅ <b>Be your own boss</b> – Build a business on your terms
-              </p>
-              <p className="sub2 text-sm md:text-base text-slate-800">
-                ✅ <b>Flexible schedule</b> – Work when and where it works for you
-              </p>
-              <p className="sub2 text-sm md:text-base text-slate-800">
-                ✅ <b>Unlimited income potential</b> – Your success has no ceiling
-              </p>
-              <p className="sub2 text-sm md:text-base text-slate-800">
-                ✅ <b>Make an impact</b> – Protect families while building your legacy
-              </p>
+                ✅ <b>Be your own boss</b> ✅ <b>Flexible schedule</b> <b>Unlimited income potential</b> <b>Make an impact</b>
+               </p>
             </div>
           </div>
 
