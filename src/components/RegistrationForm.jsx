@@ -137,7 +137,7 @@ export default function RegistrationForm() {
               transition={{ duration: 0.2 }}
             >
               <div className="cardHeader">
-                 <img src="can-logo.png" alt="CAN Care & Advancement Network" className="h-14 md:h-16 mx-auto mb-4" />
+                 <img src="/CAN_TTN.png" alt="CAN Care & Advancement Network" className="h-14 md:h-16 mx-auto mb-4" />
             <div className="h1 text-2xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
             <p className="sub1 text-xl md:text-2xl font-semibold text-green-600 mb-4">
               <b>Welcome to CAN Care & Advancement Network</b>
@@ -153,9 +153,9 @@ export default function RegistrationForm() {
             </p>
           </div>
 
-          {/* Benefits Section */}
+          {/* Benefits Section - FIXED: Now properly centered */}
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6">
-              <div className="space-y-3">
+              <div className="flex justify-center items-center">
                 <p className="sub2 text-sm md:text-base text-slate-800 text-center">
                 ✅ <b>Be your own boss</b> ✅ <b>Flexible schedule</b> ✅ <b>Unlimited income potential</b> ✅ <b>Make an impact</b>
                 </p>
@@ -187,20 +187,20 @@ export default function RegistrationForm() {
                     ))}
                   </div>
 
-                  <div className="help">Choose one. Selecting “Both” shows both sections.</div>
+                  <div className="help">Choose one. Selecting "Both" shows both sections.</div>
                 </div>
 
                 {/* Opportunities + Wealth */}
                 <div className="split">
                   <div className="section">
                     <div className="sectionTitle">
-                      Entrepreneurship - Business Opportunity{showEntrepreneurship ? <span className="req">*</span> : null}
+                      Business Opportunities{showEntrepreneurship ? <span className="req">*</span> : null}
                     </div>
 
                     {showEntrepreneurship ? (
-                      <div className="choices">
+                      <div className="col">
                         {BUSINESS_OPPORTUNITIES.map((o) => (
-                          <label className="pill" key={o.id}>
+                          <label className="check" key={o.id}>
                             <input
                               type="checkbox"
                               checked={formData.business_opportunities.includes(o.id)}
@@ -211,19 +211,19 @@ export default function RegistrationForm() {
                         ))}
                       </div>
                     ) : (
-                      <div className="help">Select “Entrepreneurship” or “Both” above to enable this section.</div>
+                      <div className="help">Select "Entrepreneurship" or "Both" above to enable this section.</div>
                     )}
                   </div>
 
                   <div className="section">
                     <div className="sectionTitle">
-                      Client - Wealth Building Solutions{showClient ? <span className="req">*</span> : null}
+                      Wealth Solutions{showClient ? <span className="req">*</span> : null}
                     </div>
 
                     {showClient ? (
-                      <div className="choices">
+                      <div className="col">
                         {WEALTH_SOLUTIONS.map((o) => (
-                          <label className="pill" key={o.id}>
+                          <label className="check" key={o.id}>
                             <input
                               type="checkbox"
                               checked={formData.wealth_solutions.includes(o.id)}
@@ -234,7 +234,7 @@ export default function RegistrationForm() {
                         ))}
                       </div>
                     ) : (
-                      <div className="help">Select “Client” or “Both” above to enable this section.</div>
+                      <div className="help">Select "Client" or "Both" above to enable this section.</div>
                     )}
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export default function RegistrationForm() {
                 )}
               </p>
               <p className="sub2" style={{ marginTop: 10 }}>
-                We'll reach out to you soon. Thanks for choosing CAN Thrive Together Network!
+                We'll reach out to you soon. Thanks for choosing CAN Care & Advancement Network!
               </p>
             </motion.div>
           )}
