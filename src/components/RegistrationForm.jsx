@@ -141,7 +141,7 @@ export default function RegistrationForm() {
                 src={logo} 
                 alt="CAN Care & Advancement Network" 
                 className="h-14 md:h-16 w-auto mx-auto mb-4 object-contain max-w-full" 
-                style={{ maxHeight: '64px' }}
+                style={{ maxHeight: '72px' }}
               />
                 <div className="h1 text-2xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
                 <p className="sub1 text-xl md:text-2xl font-semibold text-green-600 mb-4">
