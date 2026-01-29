@@ -404,7 +404,7 @@ export default function RegistrationForm() {
                 )}
               </p>
               <p className="sub2" style={{ marginTop: 10 }}>
-                We'll reach out to you soon. Thanks for choosing CAN Care & Advancement Network!
+                We'll reach out to you soon. Thanks for choosing <b>CAN Care & Advancement Network</b>!
               </p>
             </motion.div>
           )}
