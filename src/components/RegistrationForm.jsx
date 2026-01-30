@@ -183,67 +183,18 @@ export default function RegistrationForm() {
     Get Started - Registration
   </h1>
   
-  {/* Welcome - Line 1 - BIG SPACE BELOW */}
-  <p style={{
-    fontSize: '16px',
-    color: '#334155',
-    margin: '0 0 20px 0',
-    padding: '0',
-    lineHeight: 1.6,
-    textAlign: 'center',
-    display: 'block'
-  }}>
-    Welcome to CAN Care & Advancement Network.
-  </p>
-  
-  {/* Welcome - Line 2 - BIG SPACE BELOW */}
-  <p style={{
-    fontSize: '14px',
-    color: '#475569',
-    margin: '0 0 20px 0',
-    padding: '0',
-    lineHeight: 1.6,
-    textAlign: 'center',
-    display: 'block'
-  }}>
-    We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
-  </p>
-  
-  {/* Welcome - Line 3 - BIG SPACE BELOW */}
-  <p style={{
-    fontSize: '14px',
-    color: '#475569',
-    margin: '0 0 24px 0',
-    padding: '0',
-    lineHeight: 1.6,
-    textAlign: 'center',
-    display: 'block'
-  }}>
-    At <strong>CAN Care & Advancement Network</strong>, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
-  </p>
-  
-  {/* Benefits Section - BRIGHT GREEN TO BLUE GRADIENT */}
-  <div style={{
-    backgroundImage: 'linear-gradient(to right, #dcfce7, #bfdbfe)',
-    border: '1px solid #86efac',
-    borderRadius: '12px',
-    padding: '24px',
-    marginBottom: '24px',
-    textAlign: 'center',
-    width: '100%',
-    boxSizing: 'border-box'
-  }}>
-    <p style={{
-      fontSize: '14px',
-      color: '#1e293b',
-      fontWeight: '500',
-      margin: '0',
-      padding: '0',
-      lineHeight: 2
-    }}>
-      ✅ <strong>Be your own boss</strong> ✅ <strong>Flexible schedule</strong> ✅ <strong>Unlimited income potential</strong> ✅ <strong>Make an impact</strong>
-    </p>
-  </div>
+ <p className="sub2 text-base md:text-lg text-slate-700 mb-4">
+                  We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
+                </p>
+                <p className="sub2 text-base md:text-lg text-slate-700 mb-6">
+                  At <b>CAN Care & Advancement Network</b>, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
+                </p>
+                {/* Benefits Section */}
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 mx-auto max-w-4xl">
+                  <p className="sub2 text-sm md:text-base text-slate-800 text-center">
+                    ✅ <b>Be your own boss</b> ✅ <b>Flexible schedule</b> ✅ <b>Unlimited income potential</b> ✅ <b>Make an impact</b>
+                  </p>
+                </div>
 </div>
               
   
