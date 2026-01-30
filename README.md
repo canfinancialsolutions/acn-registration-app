@@ -52,3 +52,6 @@ Make sure you have:
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
+##  git add .
+   git commit -m "Update registration header styling"
+   git push
