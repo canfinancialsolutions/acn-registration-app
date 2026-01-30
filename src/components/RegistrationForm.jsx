@@ -145,6 +145,15 @@ export default function RegistrationForm() {
     style={{ maxHeight: '96px' }}
   />
   
+<div className="cardHeader text-center">
+  {/* Logo - Responsive */}
+  <img 
+    src={logo} 
+    alt="CAN Care & Advancement Network" 
+    className="h-16 md:h-20 lg:h-24 w-auto mx-auto mb-2 object-contain max-w-full" 
+    style={{ maxHeight: '96px' }}
+  />
+  
   {/* Company Name - Blue, Bold */}
   <h2 className="text-xl font-bold text-blue-700 mb-0 leading-tight">
     CAN Care & Advancement Network
@@ -177,27 +186,6 @@ export default function RegistrationForm() {
     </p>
   </div>
 </div>
-
-<form className="cardBody" onSubmit={handleSubmit}>
-  {/* Your form content starts here */}
-```
-
-## **IMPORTANT - Make sure:**
-
-1. ✅ Everything is INSIDE `<div className="cardHeader text-center">` ... `</div>`
-2. ✅ The closing `</div>` comes AFTER the benefits section
-3. ✅ The `<form className="cardBody">` starts AFTER the cardHeader closing tag
-
-The structure should be:
-```
-<div className="cardHeader text-center">
-  logo
-  company name (blue)
-  tagline (gold)  
-  Get Started heading (smaller)
-  welcome text
-  benefits box
-</div>  ← Close cardHeader here
   
               <form className="cardBody" onSubmit={handleSubmit}>
                 {/* Interest */}
