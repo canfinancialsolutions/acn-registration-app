@@ -148,7 +148,7 @@ export default function RegistrationForm() {
   
   {/* Company Name - Blue, Bold */}
   <h2 style={{ 
-    fontSize: '18px', 
+    fontSize: '14px', 
     fontWeight: 'bold', 
     color: '#1d4ed8', 
     marginBottom: '0px', 
@@ -160,7 +160,7 @@ export default function RegistrationForm() {
   
   {/* Tagline - Gold, Bold */}
   <p style={{ 
-    fontSize: '14px', 
+    fontSize: '12px', 
     fontWeight: 'bold', 
     color: '#ca8a04', 
     marginBottom: '0px',
@@ -176,8 +176,8 @@ export default function RegistrationForm() {
     fontSize: '25px',
     fontWeight: 'bold',
     color: '#0f172a',
-    marginTop: '8px',
-    marginBottom: '8px',
+    marginTop: '10px',
+    marginBottom: '10px',
     textAlign: 'center'
   }}>
     Get Started - Registration
