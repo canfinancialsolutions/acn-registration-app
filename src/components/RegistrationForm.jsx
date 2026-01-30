@@ -138,9 +138,9 @@ export default function RegistrationForm() {
             >
               <div className="cardHeader text-center">
                 <img src={logo} alt="CAN Care & Advancement Network" className="h-20 md:h-24 w-auto mx-auto mb-4 object-contain max-w-full" style={{ maxHeight: "96px" }} />
-                <div className="h2 text-2xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
-                <p className="sub1 text-xl md:text-2xl font-semibold text-green-600 mb-4">
-                  <b>Welcome to CAN Care & Advancement Network</b>
+                <div className="h1 text-xl md:text-3xl font-bold text-slate-900 mb-4">Get Started - Registration</div>
+                <p className="sub2 text-xl md:text-2xl font-semibold text-green-600 mb-4">
+                  Welcome to <b>CAN Care & Advancement Network</b>
                 </p>
                 <p className="sub2 text-base md:text-lg text-slate-700 mb-4">
                   We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
