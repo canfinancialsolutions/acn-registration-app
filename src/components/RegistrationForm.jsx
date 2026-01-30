@@ -142,35 +142,46 @@ export default function RegistrationForm() {
               transition={{ duration: 0.2 }}
             >
               <div className="cardHeader text-center">
+                {/* Logo - Responsive */}
                 <img 
                   src={logo} 
                   alt="CAN Care & Advancement Network" 
-                  className="h-16 md:h-20 lg:h-24 w-auto mx-auto mb-3 object-contain max-w-full" 
-                  style={{ maxHeight: '96px' }}
+                  className="h-16 md:h-20 lg:h-24 w-auto mx-auto mb-2 object-contain max-w-full" 
+                  style={{ maxHeight: "96px" }}
                 />
-                <h2 className="text-xl text-blue-700 mb-0 leading-none">CAN Care & Advancement Network</h2>
-                <p className="text-sm text-yellow-600 mb-0 mt-1 leading-none">Caring today, advancing tomorrow</p>
-                <h1 className="text-lg md:text-xl font-bold text-slate-900 mt-3 mb-4">Get Started - Registration</h1>
                 
-                <p className="text-base md:text-lg text-slate-700 mb-2">
-                  Welcome to CAN Care & Advancement Network.
+                {/* Company Name - Blue, Bold, No space below */}
+                <h2 className="text-lg md:text-xl font-bold text-blue-700 mb-0 leading-tight">
+                  CAN Care & Advancement Network
+                </h2>
+                
+                {/* Tagline - Gold, Bold, No space below */}
+                <p className="text-xs md:text-sm font-bold text-yellow-600 mb-0 mt-0.5 leading-tight">
+                  Caring today, advancing tomorrow
                 </p>
-                <p className="text-sm md:text-base text-slate-600 mb-3">
+                
+                {/* Registration Heading - Smaller, Bold */}
+                <h1 className="text-lg md:text-xl font-bold text-slate-900 mt-3 mb-3">
+                  Get Started - Registration
+                </h1>
+                
+                {/* Welcome Text - Compact */}
+                <p className="text-sm md:text-base text-slate-700 mb-2 leading-snug">
+                  Welcome to CAN Care & Advancement Network.
                   We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
                 </p>
-                <p className="text-sm md:text-base text-slate-700 mb-4">
+                
+                <p className="text-xs md:text-sm text-slate-600 mb-3 leading-snug">
                   At <strong>CAN Care & Advancement Network</strong>, you'll help families secure their tomorrow while advancing your own career with unlimited potential.
                 </p>
                 
-                {/* Benefits Section */}
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 mx-auto max-w-4xl">
-                  <p className="sub2 text-sm md:text-base text-slate-800 text-center">
-                    ✅ <b>Be your own boss</b> ✅ <b>Flexible schedule</b> ✅ <b>Unlimited income potential</b> ✅ <b>Make an impact</b>
+                {/* Benefits Section - Compact */}
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 md:p-4 mb-4">
+                  <p className="text-xs md:text-sm text-slate-800 text-center leading-relaxed">
+                    ✅ <strong>Be your own boss</strong> ✅ <strong>Flexible schedule</strong> ✅ <strong>Unlimited income potential</strong> ✅ <strong>Make an impact</strong>
                   </p>
                 </div>
               </div>
-
-
               <form className="cardBody" onSubmit={handleSubmit}>
                 {/* Interest */}
                 <div className="section">
@@ -208,16 +219,16 @@ export default function RegistrationForm() {
                     </div>
 
                     {showEntrepreneurship ? (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
                         {BUSINESS_OPPORTUNITIES.map((o) => (
-                          <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', width: '100%' }}>
+                          <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', fontSize: '14px' }}>
                             <input
                               type="checkbox"
-                              style={{ marginTop: '2px', minWidth: '20px', minHeight: '20px', flexShrink: 0, accentColor: '#16a34a' }}
+                              style={{ marginTop: '2px', minWidth: '18px', minHeight: '18px', flexShrink: 0, accentColor: '#16a34a' }}
                               checked={formData.business_opportunities.includes(o.id)}
                               onChange={() => toggleArray("business_opportunities", o.id)}
                             />
-                            <span style={{ flex: 1, textAlign: 'left', lineHeight: 1.6 }}>{o.label}</span>
+                            <span style={{ flex: 1, textAlign: 'left', lineHeight: 1.5 }}>{o.label}</span>
                           </label>
                         ))}
                       </div>
@@ -232,16 +243,16 @@ export default function RegistrationForm() {
                     </div>
 
                     {showClient ? (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
                         {WEALTH_SOLUTIONS.map((o) => (
-                          <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', width: '100%' }}>
+                          <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', fontSize: '14px' }}>
                             <input
                               type="checkbox"
-                              style={{ marginTop: '2px', minWidth: '20px', minHeight: '20px', flexShrink: 0, accentColor: '#16a34a' }}
+                              style={{ marginTop: '2px', minWidth: '18px', minHeight: '18px', flexShrink: 0, accentColor: '#16a34a' }}
                               checked={formData.wealth_solutions.includes(o.id)}
                               onChange={() => toggleArray("wealth_solutions", o.id)}
                             />
-                            <span style={{ flex: 1, textAlign: 'left', lineHeight: 1.6 }}>{o.label}</span>
+                            <span style={{ flex: 1, textAlign: 'left', lineHeight: 1.5 }}>{o.label}</span>
                           </label>
                         ))}
                       </div>
@@ -360,8 +371,8 @@ export default function RegistrationForm() {
                         </label>
                       ))}
                     </div>
-                      
-                    
+
+
                     </div>
 
                     <div className="field">
@@ -423,6 +434,7 @@ export default function RegistrationForm() {
               </p>
               <p className="sub2" style={{ marginTop: 10 }}>
                 We'll reach out to you soon. Thanks for choosing CAN Care & Advancement Network!
+                We'll reach out to you soon. Thanks for choosing <b>CAN Care & Advancement Network</b>!
               </p>
             </motion.div>
           )}
