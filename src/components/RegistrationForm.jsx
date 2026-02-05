@@ -150,7 +150,7 @@ export default function RegistrationForm() {
   <h2 style={{ 
     fontSize: '18px', 
     fontWeight: 'bold', 
-    color: 'blue-800', 
+    color: '#00F', 
     marginBottom: '0px', 
     lineHeight: 1.2,
     textAlign: 'center'
@@ -162,7 +162,7 @@ export default function RegistrationForm() {
   <p style={{ 
     fontSize: '14px', 
     fontWeight: 'normal', 
-    color: 'yellow-500', 
+    color: '#FF0', 
     marginBottom: '0px',
     marginTop: '4px',
     lineHeight: 1.2,
