@@ -187,7 +187,7 @@ export default function RegistrationForm() {
                   We're excited to connect with you and introduce an opportunity that combines purpose with prosperity.
                 </p>
                 <p className="sub2 text-base md:text-lg text-slate-700 mb-6">
-                  At Advancement & Care Network, you'll help families secure their tomorrow and advance your career with unlimited potential.
+                  At <b>Advancement & Care Network</b>, you'll help families secure their tomorrow and advance your career with unlimited potential.
                 </p>
                 {/* Benefits Section */}
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 mx-auto max-w-4xl">
@@ -446,12 +446,11 @@ export default function RegistrationForm() {
                 {emailSent ? (
                   <>A confirmation email has been sent to <b>{formData.email}</b>. Please check your inbox or spam folder for the confirmation email.</>
                 ) : (
-                  <>Registration received! We weren't able to send your confirmation email at the moment, but we'll reach out to you soon.</>
+                  <>Registration received! We weren't able to send your confirmation email yet, but we'll reach out to you soon.</>
                 )}
               </p>
               <p className="sub2" style={{ marginTop: 10 }}>
-                We'll reach out to you soon. Thanks for choosing ACN Advancement & Care Network!
-                We'll reach out to you soon. Thanks for choosing <b>ACN Advancement & Care Network</b>!
+               We'll reach out to you soon. Thanks for choosing <b>ACN Advancement & Care Network</b>!
               </p>
             </motion.div>
           )}
